@@ -1,0 +1,124 @@
+<body  background="https://img.freepik.com/premium-vector/white-abstract-background-3d-paper-style_23-2148403778.jpg?w=996">
+  <h3 style="text-align:center;"> Bidder Registration</h3>
+  <div class="col-md-6 offset-3 ">
+    <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-100"> 
+       
+         <div class="col-lg-8 col-xl-8">  
+          <div class="card text-dark bg-white mb-3" style="max-width: 50rem;">
+          <form  (ngSubmit)="register()" class="px-md-2">
+            <div class="form-outline mb-3 temp">
+           
+                <label for="t1" style="text-align: center;" class="mt-2">First Name</label>
+                <input type="text" name="t1" style="max-width: 30rem; "  class="form-control" placeholder="Enter Bidder FirstName" [(ngModel)]="bidder.bidderFirstName" required minlength="3" #fname="ngModel" />
+                <span class="help-block " *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+                    <span class="text-danger" *ngIf="fname.errors?.required">
+                      First Name is required
+                      </span>
+                      </span>
+
+                  
+                
+            </div>
+            
+            <div class="form-outline mb-3 temp">
+               
+                <label for="t2">Last Name</label>
+                <input type="text" name="t2" style="max-width: 30rem; "  class="form-control" placeholder="Enter Bidder LastName" [(ngModel)]="bidder.bidderLastName" required minlength="1" #lname="ngModel" />
+            
+                <span class="help-block " *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert">
+                  <span class="text-danger" *ngIf="lname.errors?.required">
+                    Last Name is required
+                    </span>
+                    </span>
+              </div>
+
+
+  
+            
+            
+
+            <div class="form-outline mb-3 temp">
+               
+                <label for="t3">Email</label>
+                <input type="email" name="t3" style="max-width: 30rem; "  class="form-control" placeholder="Enter Bidder Email" [(ngModel)]="bidder.email" required email #email="ngModel" />
+            
+                <span class="help-block " *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                  <span class="text-danger" *ngIf="email.errors?.required">
+                    Email is required
+                    </span>
+                    </span>
+            </div>
+            <div class="form-outline mb-3 temp">
+             <label for="t4">Password</label>
+            <input type="password" name="t4" style="max-width: 30rem;" class="form-control" placeholder="Set Password" [(ngModel)]="bidder.password" required minlength="6" #pass="ngModel" />
+            <span class="help-block " *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert">
+              <span class="text-danger" *ngIf="pass.errors?.required">
+                Password is required
+                </span>
+                </span>  
+          
+          </div>
+
+            <div class="form-outline mb-3 temp">
+                <label for="t6">Phone Number</label>
+               <input type="tel" name="t6" style="max-width: 30rem;"  class="form-control" placeholder="Enter Phone Number" [(ngModel)]="bidder.contactNo" required minlength="10" maxlength="10" #cno="ngModel" />
+               <span class="help-block " *ngIf="cno.invalid && (cno.dirty || cno.touched)" class="alert">
+                <span class="text-danger" *ngIf="cno.errors?.required">
+                Contact Number is required
+                  </span>
+                  </span> 
+           
+              </div>
+
+            
+
+            
+
+            <div class="form-outline mb-3 temp">
+                <label for="t8">Trader License Number</label>
+               <input type="tel" name="t8" style="max-width: 30rem;"  class="form-control" placeholder="Enter Trader License Number" [(ngModel)]="bidder.traderLicenseNo" required minlength="10"  #lno="ngModel" />
+               <span class="help-block " *ngIf="lno.invalid && (lno.dirty || lno.touched)" class="alert">
+                <span class="text-danger" *ngIf="lno.errors?.required">
+               Trade License number is required
+                  </span>
+                  </span> 
+            
+              </div>
+
+            <div class="form-outline mb-3 temp">
+                <label for="t7">Aadhar Number</label>
+               <input type="tel" name="t7" style="max-width: 30rem;"  class="form-control" placeholder="Enter Aadhar Number" [(ngModel)]="bidder.aadharNo" required minlength="12"  #ano="ngModel" />
+               <span class="help-block " *ngIf="ano.invalid && (ano.dirty || ano.touched)" class="alert">
+                <span class="text-danger" *ngIf="ano.errors?.required">
+              Aadhar is required
+                  </span>
+                  </span> 
+            
+              </div>
+
+            <div class="form-outline mb-3 temp">
+                <label for="t9">Balance</label>
+               <input type="number" name="t9" style="max-width: 30rem;" class="form-control" placeholder="Enter Balance" [(ngModel)]="bidder.balance" required   #bno="ngModel" />
+               <span class="help-block " *ngIf="bno.invalid && (bno.dirty || bno.touched)" class="alert">
+                <span class="text-danger" *ngIf="bno.errors?.required">
+               Balance is required
+                  </span>
+                  </span> 
+          
+              </div>
+            <div class="temp">
+           <button type="submit" class="btn btn-success btn-m mb-1">Register</button>   
+          </div>
+           <div class="mt-1 mb-1">
+            <a routerLink="/BidderLogin">Already Registered? Login Here!!</a>
+          </div>
+          </form> 
+        </div>
+    </div>
+ </div>
+ </div>
+ <router-outlet></router-outlet>
+
+
+

@@ -1,0 +1,57 @@
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<br>
+
+<div class="temp">
+
+    <body>
+
+
+
+
+        <div>
+            <h1 style="
+          margin-left: 400px;
+          font-family: 'Cairo', sans-serif;
+        ">
+               Bidder Details
+            </h1>
+        </div>
+        <span> </span>
+        <br />
+        <div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">BidderId</th>
+                        <th scope="col">Bidder First Name</th>
+                        <th scope="col">Bidder Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bidder of bidders">
+                        <td>{{bidder.bidderId}}</td>
+                        <td>{{bidder.bidderFirstName}}</td>
+                        <td>{{bidder.bidderLastName}}</td>
+                        <td>{{bidder.email}}</td>
+                        <td>{{bidder.contactNo}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </body>
+</div>
+
+
+
+
+
+
+

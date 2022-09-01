@@ -1,0 +1,112 @@
+<div class="temp">
+<body style="margin-right: 350px;">
+
+  <h1
+  style="
+    margin-left: 350px;
+    font-family: 'Cairo', sans-serif;
+  "
+>
+
+Apply Insurance
+</h1>
+
+ 
+  <div class="col-md-6 offset-3 ">
+
+    <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-100"> 
+       
+         <div class="col-lg-8 col-xl-8">  
+          <div class="card text-dark bg-white mb-3" style="min-width: 34rem; padding-left: 20px;">
+          <form  (ngSubmit)="Submitdata()" class="px-md-2">
+            <div class="form-outline mb-3">
+           
+                <label for="t1" style="text-align: center;" class="mt-3">Insuree Name</label>
+                <input type="text" name="t1" style="max-width: 30rem; "  class="form-control" placeholder="Enter Insuree Name" [(ngModel)]="insurance.insureeName" required minlength="3" #fname="ngModel" />
+                <span class="help-block " *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+                    <span class="text-danger" *ngIf="fname.errors?.required">
+                      Insuree Name is required
+                      </span>
+                      </span>
+
+                  
+                
+            </div>
+            
+            <div class="form-outline mb-3">
+               
+                <label for="t2">Area</label>
+                <input type="number" name="t2" style="max-width: 30rem; "  class="form-control" placeholder="Enter Area" [(ngModel)]="insurance.area" required minlength="3" #lname="ngModel" />
+            
+                <span class="help-block " *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert">
+                  <span class="text-danger" *ngIf="lname.errors?.required">
+                   Area is required
+                    </span>
+                    </span>
+              </div>
+
+
+  
+            
+            
+
+            <div class="form-outline mb-3">
+               
+                <label for="t3">Crop Name</label>
+                <input type="text" name="t3" style="max-width: 30rem; "  class="form-control" placeholder="Enter Crop Name" [(ngModel)]="insurance.cropName" required minlength="3" #email="ngModel" />
+            
+                <span class="help-block " *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                  <span class="text-danger" *ngIf="email.errors?.required">
+                    Crop Name is required
+                    </span>
+                    </span>
+            </div>
+            <div class="form-outline mb-3">
+             <label for="t4">Crop Type</label>
+            <!-- <input type="text" name="t4" style="max-width: 30rem;" class="form-control" placeholder="Enter Cause of loss" [(ngModel)]="insurance.causeofloss" required minlength="3" #pass="ngModel" /> -->
+            <select class="form-control" [(ngModel)]="insurance.croptype" name="t4" style="max-width: 95%;">
+              <option value="none" selected disabled hidden>Select an Option</option>
+              <option value="Kharif">KHARIF</option>
+
+              <option value="Rabi">RABI</option>
+              <option value="Horiculture">HORICULTURE</option>
+            </select>
+            
+            
+          
+          </div>
+
+            <div class="form-outline mb-3">
+                <label for="t5">Sum Insured</label>
+               <input type="number" name="t5" style="max-width: 30rem;"  class="form-control" placeholder="Enter Sum Insured" [(ngModel)]="insurance.sumInsured"  required  maxlength="10" #cno="ngModel" />
+               <span class="help-block " *ngIf="cno.invalid && (cno.dirty || cno.touched)" class="alert">
+                <span class="text-danger" *ngIf="cno.errors?.required">
+               Sum Insured is required
+                  </span>
+                  </span> 
+           
+              </div>
+
+            
+
+
+
+           
+
+        <button type="submit" (click)="calculation()" class="btn btn-primary mb-3">Submit</button>   
+           
+          </form> 
+        </div>
+    </div>
+ </div>
+ </div>
+  </div>
+  </body>
+</div>
+
+
+
+
+
+

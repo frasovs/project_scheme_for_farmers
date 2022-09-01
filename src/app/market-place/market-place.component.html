@@ -1,0 +1,43 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+</head>
+<div class="temp">
+<div>
+  <h1 style="margin-left: 480px">MarketPlace</h1>
+</div>
+<br />
+
+<div>
+  <table class="table">
+    <thead style="background-color: black; color:white;">
+      <tr>
+        <th>Crop Id</th>
+        <th>Crop Name</th>
+        <th>Farmer Name</th>
+        <th>Crop Type</th>
+        <th>Fertilizer Type</th>
+        <th>Quantity</th>
+        <th>Bidder Name</th>
+        <th>Current bidding amount</th>
+        <th>Approved Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of crops">
+        <td>{{ c.cropid }}</td>
+        <td>{{ c.cropName }}</td>
+        <td>{{ c.farmer?.farmerFirstName }}</td>
+        <td>{{ c.croptype }}</td>
+        <td>{{ c.fertilizertype }}</td>
+        <td>{{ c.quantity }}</td>
+        <td>{{ c.bidder?.bidderFirstName }}</td>
+        <td>{{ c.baseprice }}</td>
+        <td>{{ c.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

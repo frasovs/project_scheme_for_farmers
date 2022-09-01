@@ -1,0 +1,55 @@
+<body>
+  <div class="header">
+    <img src="assets/biddericon1.png" width="70px" height="70px"
+      style="float: left; margin-top: 7px; margin-left: 10px;" />&nbsp;
+    <h1 style="
+            margin-left: 110px;
+            font-family: 'Cairo', sans-serif;
+            color: white;
+            font-weight: bold;
+          ">
+      Bidder Home
+    </h1>
+
+  </div>
+
+  <img src="assets/bg3.jpg" style="float: right;" />
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Bidder Menu</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <!-- <p>Dummy Heading</p> -->
+        <li>
+          <a href="/bidderHome/placebid" aria-expanded="false">Place Bid</a>
+
+        </li>
+        <li>
+          <a href="/bidderHome/biddingHistory" aria-expanded="false">Bid History</a>
+        </li>
+
+        <li>
+          <a href="/bidderHome/marketplace" aria-expanded="false">Market Place</a>
+        </li>
+
+
+
+        <li>
+          <a href="javascript:void(0)" (click)="balance()">Wallet</a>
+        </li>
+
+        <li>
+          <a href="/Home">Log Out</a>
+        </li>
+
+      </ul>
+    </nav>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</body>

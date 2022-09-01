@@ -1,0 +1,57 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<br>
+
+<div class="temp">
+
+    <body>
+
+
+
+
+        <div>
+            <h1 style="
+          margin-left: 400px;
+          font-family: 'Cairo', sans-serif;
+        ">
+               Farmer Details
+            </h1>
+        </div>
+        <span> </span>
+        <br />
+        <div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+
+
+                        <th scope="col">Farmer Id</th>
+                        <th scope="col">Farmer FirstName</th>
+                        <th scope="col">Farmer LastName</th>
+
+                        <th scope="col">Email</th>
+
+                        <th scope="col">Contact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let f of farmers">
+                        <td>{{f.farmerId}}</td>
+                        <td>{{f.farmerFirstName}}</td>
+                        <td>{{f.farmerLastName}}</td>
+                        <td>{{f.email}}</td>
+                        <td>{{f.contactNo}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </body>
+</div>
+
+
+
+

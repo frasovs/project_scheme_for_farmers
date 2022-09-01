@@ -1,0 +1,44 @@
+
+.temp{
+  height: 70vh;
+  width: 70vw;
+  margin-top: 50px;
+  margin-left: 420px;
+
+}
+
+
+.login-box {
+  background-repeat: repeat-y;
+  background-color: rgb(205, 217, 224);
+  width: 500px;
+  background-size: cover;
+  margin-left: 300px;
+  color: rgb(15, 14, 14);
+  position: relative;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 30px;
+}
+
+lable {
+  font-weight: bold;
+  float: left;
+  clear: both;
+  margin-left: 5%;
+  margin: 0pc;
+}
+
+input {
+  float: right;
+  clear: none;
+  margin-right: 20px;
+}
+.ctype {
+  float: right;
+  clear: none;
+  margin-right: 20px;
+  padding: 4px;
+  width: 11pc;
+  min-width:43.5%
+}

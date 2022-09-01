@@ -1,0 +1,64 @@
+<body>
+    
+    
+    <div class="header" style="z-index: 1;">
+        <img src="assets/admincopy1.png" width="120px" height="70px"
+            style="float: left; margin-top: 7px; margin-left: 0px;" />&nbsp;
+        <h1 style="
+            margin-left: 0px;
+            font-family: 'Cairo', sans-serif;
+            color: white;
+            font-weight: bold;
+          ">
+            Admin Home
+        </h1>
+
+    </div>
+    <img src="assets/bg3.jpg" style="float: right;"/>
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Menu</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <!-- <p>Dummy Heading</p> -->
+                <li>
+                    <a href="/adminHome/farmerLink" aria-expanded="false">Farmer Details</a>
+
+                </li>
+                <li>
+                    <a href="/adminHome/bidderLink" aria-expanded="false">Bidder Details</a>
+                </li>
+
+                <li>
+                    <a href="/adminHome/biddingApproval" aria-expanded="false">Bid Approval</a>
+                </li>
+                <li>
+                    <a href="/adminHome/insuranceApprovalLink" aria-expanded="false">Insurance Approval</a>
+
+                </li>
+                <li>
+                    <a href="/adminHome/claimApprovalLink" aria-expanded="false">Insurance Claim Approval</a>
+                </li>
+
+                <li>
+                    <a href="/Home">Log Out</a>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="main">
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+</body>
+
+
+
+
+
+

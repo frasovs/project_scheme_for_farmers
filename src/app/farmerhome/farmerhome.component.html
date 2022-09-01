@@ -1,0 +1,70 @@
+<body>
+  <div class="header">
+    <img src="assets/temp2.png" width="70px" height="70px"
+      style="float: left; margin-top: 7px; margin-left: 10px;" />&nbsp;
+    <h1 style="
+        margin-left: 110px;
+        font-family: 'Cairo', sans-serif;
+        color: white;
+        font-weight: bold;
+      ">
+      Farmer Home
+    </h1>
+
+  </div>
+
+  <!-- <img src="assets/bg3.jpg" style="float: right;" /> -->
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Farmer Menu</h3>
+      </div>
+
+      <ul class="list-unstyled components">
+        <!-- <p>Dummy Heading</p> -->
+        <li>
+          <a href="/farmerHome/sellCrop" aria-expanded="false">Sell Request</a>
+
+        </li>
+        <li>
+          <a href="/farmerHome/soldHistory" aria-expanded="false">Sold History</a>
+        </li>
+
+        <li>
+          <a href="/farmerHome/marketplace" aria-expanded="false">Market Place</a>
+        </li>
+
+
+
+        <li>
+          <a href="/farmerHome/ApplyInsurance">Apply Insurance</a>
+        </li>
+        <li>
+          <a href="/farmerHome/ClaimInsurance">Claim Insurance</a>
+        </li>
+        <li>
+          <a href="/farmerHome/ViewInsurance">View Insurance</a>
+        </li>
+
+        <li>
+          <a href="javascript:void(0)" (click)="bal()">Wallet</a>
+        </li>
+
+        <li>
+          <a href="/Home">Log Out</a>
+        </li>
+
+      </ul>
+    </nav>
+
+
+  </div>
+
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+
+  
+</body>

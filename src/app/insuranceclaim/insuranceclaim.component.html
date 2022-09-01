@@ -1,0 +1,363 @@
+<div class="temp">
+<div>
+  <h1
+    style="
+      margin-left: 400px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    "
+  >
+    Insurance Claim
+  </h1>
+</div>
+<span> </span>
+<div>
+  <table class="table">
+    <thead style="background-color: black; color:white;">
+      <tr>
+        <th>Claim ID</th>
+        <th>Insuree Id</th>
+        <th>Farmer ID</th>
+        <th>Insuree Name</th>
+        <th>Cause of Loss</th>
+        <th>Date of Loss</th>
+        <th>Amount</th>
+        <th>Claim approval</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let i of claims">
+        <td>{{ i.claimId }}</td>
+        <td>{{ i.insurance.insuranceId }}</td>
+        <td>{{ i.farmer.farmerId }}</td>
+        <td>{{ i.insureeName }}</td>
+        <td>{{ i.causeofloss }}</td>
+        <td>{{ i.dateofloss }}</td>
+        <td>{{ i.amount }}</td>
+        <td>{{ i.claimapproval }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br />
+<button style="margin-right: 500px" class="btn btn-primary" (click)="approve()">
+  Approve Insurance Claim
+</button>
+<br />
+<br />
+<div *ngIf="div1">
+  <form (ngSubmit)="approveclaim()">
+    <div class="login-box" style="border-radius: 5%; box-shadow: black">
+      <h1
+        style="
+          margin-left: 150px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+        "
+      >
+        Approval
+      </h1>
+      <label for="t1"> Claim Id:</label>
+      <input
+        type="Number"
+        name="t1"
+        [(ngModel)]="claim.claimId"
+        required
+        #id="ngModel"
+      /><br /><br />
+      <div *ngIf="id.invalid && (id.dirty || id.touched)" class="alert">
+        <div *ngIf="id.errors?.required">Claim id is Required!</div>
+      </div>
+      <label for="t2"> Insuree Id:</label>
+      <input
+        type="Number"
+        name="t2"
+        [(ngModel)]="claim.insureeId"
+        required
+        #fid="ngModel"
+      /><br /><br />
+      <div *ngIf="fid.invalid && (fid.dirty || fid.touched)" class="alert">
+        <div *ngIf="fid.errors?.required">Insuree id is Required!</div>
+      </div>
+      <label for="t3"> Farmer Id:</label>
+      <input
+        type="Number"
+        name="t3"
+        [(ngModel)]="claim.farmerId"
+        required
+        #bid="ngModel"
+      /><br /><br />
+      <div *ngIf="bid.invalid && (bid.dirty || bid.touched)" class="alert">
+        <div *ngIf="bid.errors?.required">Farmer id is Required!</div>
+      </div>
+
+      <label for="t4"> Insuree Name </label>
+      <input
+        type="text"
+        name="t4"
+        [(ngModel)]="claim.insureeName"
+        required
+        minlength="3"
+        #cname="ngModel"
+      /><br /><br />
+      <div
+        *ngIf="cname.invalid && (cname.dirty || cname.touched)"
+        class="alert"
+      >
+        <div *ngIf="cname.errors?.required">Insuree Name is Required!</div>
+      </div>
+      <label for="t5"> Cause of Loss </label>
+      <input
+        type="text"
+        name="t5"
+        [(ngModel)]="claim.causeofloss"
+        required
+        minlength="3"
+        #ftype="ngModel"
+      /><br /><br />
+      <div
+        *ngIf="ftype.invalid && (ftype.dirty || ftype.touched)"
+        class="alert"
+      >
+        <div *ngIf="ftype.errors?.required">Fertilizer Type is Required!</div>
+      </div>
+
+      <label for="t6"> Date of Loss:</label>
+      <input
+        class="dtype"
+        type="date"
+        name="t6"
+        [(ngModel)]="claim.dateofloss"
+        required
+        #quan="ngModel"
+        style="min-width:41%"
+      /><br /><br />
+      <div *ngIf="quan.invalid && (quan.dirty || quan.touched)" class="alert">
+        <div *ngIf="quan.errors?.required">Date is Required!</div>
+      </div>
+
+      <label for="t7"> Amount </label>
+      <input
+        type="number"
+        name="t7"
+        [(ngModel)]="claim.amount"
+        required
+        #bp="ngModel"
+      /><br /><br />
+      <div *ngIf="bp.invalid && (bp.dirty || bp.touched)" class="alert">
+        <div *ngIf="bp.errors?.required">Enter the Bid amount!</div>
+      </div>
+      <label for="t7"> Update Status </label>
+      <input
+        type="text"
+        name="t8"
+        [(ngModel)]="claim.claimapproval"
+        required
+        #st="ngModel"
+      /><br /><br />
+      <div *ngIf="st.invalid && (st.dirty || st.touched)" class="alert">
+        <div *ngIf="st.errors?.required">Enter the Status!</div>
+      </div>
+
+      <button style="margin-left: 170px" class="btn btn-primary" type="submit">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
+</div>
+
+<!-- <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<div class="temp">
+
+  <body>
+    <div>
+      <h1 style="
+      margin-left: 400px;
+      font-family: 'Cairo', sans-serif;
+    ">
+        Insurance Claim Approval
+      </h1>
+    </div>
+    <span> </span>
+    <div>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Claim ID</th>
+            <th scope="col">Insuree Id</th>
+            <th scope="col">Farmer ID</th>
+            <th scope="col">Insuree Name</th>
+            <th scope="col">Cause of Loss</th>
+            <th scope="col">Date of Loss</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Claim approval</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let i of claims">
+            <td>{{ i.claimId }}</td>
+            <td>{{ i.insurance.insuranceId }}</td>
+            <td>{{ i.farmer.farmerId }}</td>
+            <td>{{ i.insureeName }}</td>
+            <td>{{ i.causeofloss }}</td>
+            <td>{{ i.dateofloss }}</td>
+            <td>{{ i.amount }}</td>
+            <td>{{ i.claimapproval }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br />
+    <button style="margin-right: 500px" class="btn btn-primary" (click)="approve()">
+      Approve Insurance Claim
+    </button>
+    <br />
+    <br />
+
+
+    <div *ngIf="div1" style="margin-right: 350px;">
+      <div class="col-md-6 offset-3 ">
+
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+
+            <div class="col-lg-8 col-xl-8">
+              <div class="card text-dark bg-white mb-3" style="min-width: 34rem; padding-left: 20px;">
+                <form (ngSubmit)="approveclaim()" class="px-md-2">
+
+                  <div class="form-outline mb-3">
+
+                    <label for="t5">Claim Id</label>
+                    <input type="number" name="t5" style="max-width: 30rem; " class="form-control"
+                      placeholder="Enter Claim Id" [(ngModel)]="claim.claimId" required minlength="3"
+                      #email="ngModel" />
+
+                    <span class="help-block " *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                      <span class="text-danger" *ngIf="email.errors?.required">
+                       Claim Id is required
+                      </span>
+                    </span>
+                  </div>
+
+
+                  <div class="form-outline mb-3">
+
+                    <label for="t1" style="text-align: center;" class="mt-2">Insuree Id</label>
+                    <input type="number" name="t1" style="max-width: 30rem; " class="form-control"
+                      placeholder="Enter Insuree Id" [(ngModel)]="claim.insureeId" required minlength="3" #fname="ngModel" />
+                    <span class="help-block " *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+                      <span class="text-danger" *ngIf="fname.errors?.required">
+                        Insuree Id is required
+                      </span>
+                    </span>
+
+
+
+                  </div>
+
+                  <label for="t2" style="text-align: center;" class="mt-2">Farmer Id</label>
+                  <input type="number" name="t2" style="max-width: 30rem; " class="form-control"
+                    placeholder="Enter Farmer Id" [(ngModel)]="claim.farmerId" required minlength="3" #fname="ngModel" />
+                  <span class="help-block " *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+                    <span class="text-danger" *ngIf="fname.errors?.required">
+                      Farmer Id is required
+                    </span>
+                  </span>
+
+
+                  <label for="t3" style="text-align: center;" class="mt-2">Insuree Name</label>
+                  <input type="text" name="t3" style="max-width: 30rem; " class="form-control"
+                    placeholder="Enter Insuree Name" [(ngModel)]="claim.insureeName" required minlength="3" #fname="ngModel" />
+                  <span class="help-block " *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert">
+                    <span class="text-danger" *ngIf="fname.errors?.required">
+                     Insuree Name is required
+                    </span>
+                  </span>
+
+                  <div class="form-outline mb-3">
+
+                    <label for="t5">Cause of Loss</label>
+                    <input type="text" name="t5" style="max-width: 30rem; " class="form-control"
+                      placeholder="Enter Cause of Loss" [(ngModel)]="claim.causeofloss" required minlength="3"
+                      #email="ngModel" />
+
+                    <span class="help-block " *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                      <span class="text-danger" *ngIf="email.errors?.required">
+                        Cause of Loss is required
+                      </span>
+                    </span>
+                  </div>
+
+                 <div class="form-outline mb-3">
+
+                    <label for="t5">Date of Loss</label>
+                    <input type="date" name="t5" style="max-width: 30rem; " class="form-control"
+                      placeholder="Enter Date of Loss"  [(ngModel)]="claim.dateofloss" required minlength="3"
+                      #email="ngModel" />
+
+                    <span class="help-block " *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                      <span class="text-danger" *ngIf="email.errors?.required">
+                       Date of Loss is required
+                      </span>
+                    </span>
+                  </div>
+          
+
+                  
+
+                  <div class="form-outline mb-3">
+                    <label for="t8">Amount</label>
+                    <input type="number" name="t8" style="max-width: 30rem;" class="form-control"
+                      placeholder="Enter Amount" [(ngModel)]="claim.amount" required maxlength="10"
+                      #cno="ngModel" />
+                    <span class="help-block " *ngIf="cno.invalid && (cno.dirty || cno.touched)" class="alert">
+                      <span class="text-danger" *ngIf="cno.errors?.required">
+                        Amount is required
+                      </span>
+                    </span>
+
+                  </div>
+
+                  <div class="form-outline mb-3">
+                    <label for="t9">Update Status</label>
+                    <input type="text" name="t9" style="max-width: 30rem;" class="form-control"
+                      placeholder="Approve Status" [(ngModel)]="claim.approvedstatus" required maxlength="10" #cno="ngModel" />
+                    <span class="help-block " *ngIf="cno.invalid && (cno.dirty || cno.touched)" class="alert">
+                      <span class="text-danger" *ngIf="cno.errors?.required">
+                        Status is required
+                      </span>
+                    </span>
+
+                  </div>
+
+
+
+                  <div>
+                    <button class="btn btn-primary mb-2" type="submit"> Submit
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+              
+  </body>
+</div> -->
+
+
+
+
+
+
+
+
+
